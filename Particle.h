@@ -21,7 +21,7 @@ private:
 public:
     Particle();
     virtual ~Particle();
-    void update(int interval, float spin);
+    void update(int interval, float spin, float speed);
     void draw(ImVec4 color, int particleRadius);
 };
 

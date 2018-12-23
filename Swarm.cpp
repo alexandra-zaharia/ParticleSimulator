@@ -27,7 +27,7 @@ void Swarm::update(int elapsed, SimulatorSettings settings) {
     int interval = elapsed - lastTime;
     lastTime = elapsed;
     for (Particle* particle : m_pParticles) {
-        particle->update(interval, settings.particleSpin);
+        particle->update(interval, settings.particleSpin, settings.particleSpeed);
     }
 
 

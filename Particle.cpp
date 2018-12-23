@@ -26,14 +26,14 @@ void Particle::init() {
     m_speed *= m_speed;
 }
 
-void Particle::update(int interval, float spin) {
+void Particle::update(int interval, float spin, float speed) {
     m_direction += interval * spin;
 
     double xspeed = m_speed * cos(m_direction);
     double yspeed = m_speed * sin(m_direction);
 
-    m_x += xspeed * interval;
-    m_y += yspeed * interval;
+    m_x += xspeed * interval * speed;
+    m_y += yspeed * interval * speed;
 
     if (m_x < -1 || m_x > 1 || m_y < -1 || m_y > 1) {
         init();

@@ -7,13 +7,14 @@
 
 namespace particlesim {
 
-SimulatorSettings::SimulatorSettings() : SimulatorSettings(2500, 1, 0.0003f, 1) {}
+SimulatorSettings::SimulatorSettings() : SimulatorSettings(2500, 1, 0.0003f, 0.5f, 1) {}
 
 SimulatorSettings::SimulatorSettings(
-        int nParticles, int particleRadius, float particleSpin, int blurRadius) :
+int nParticles, int particleRadius, float particleSpin, float particleSpeed, int blurRadius) :
         nParticles(nParticles),
         particleRadius(particleRadius),
         particleSpin(particleSpin),
+        particleSpeed(particleSpeed),
         blurRadius(blurRadius) {
     cycleColors = true;
     particleColor = ImVec4(0.0f, 0.0f, 0.0f, 1.0f);
@@ -79,6 +80,15 @@ void SimulatorSettings::show() {
                    "to the explosion center?\n");
     ImGui::SliderInt("##Particle spin", &spin, 1, 8);
     particleSpin = spin * 0.0001f;
+    ImGui::Spacing(); ImGui::Separator(); ImGui::Spacing();
+
+    // Particle speed
+    static int speed = 5;
+    ImGui::Text("Particle speed");
+    ImGui::SameLine();
+    showHelpMarker("How fast should exploding particles diffuse?\n");
+    ImGui::SliderInt("##Particle speed", &speed, 1, 10);
+    particleSpeed = speed * 0.1f;
     ImGui::Spacing(); ImGui::Separator(); ImGui::Spacing();
 
     // Window footer

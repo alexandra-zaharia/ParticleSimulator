@@ -11,7 +11,7 @@ This project is an adaptation of the particle simulator code from the free Udemy
   * `make`
   * `g++`
   * `libsdl2-dev`
-  * `libGL`
+  * OpenGL 3
   
 ## Building the particle simulator
 
@@ -44,10 +44,9 @@ Run the particle simulator from the `build` directory:
 
 ## Motivation
 
-It is purely personal: the particle simulator doesn't "do" anything useful, but it allowed me to dive (again) into C++, use graphical frameworks and test out a C++ library for GUI creation.
+The motivation to build this project is purely personal: although the particle simulator does not "do" anything useful *per se*, it allowed me to dive (again) into C++, to reflect object oriented design, to use graphical frameworks, and to test out a C++ library for GUI creation.
 
 ## TODO
-  * Add widget for particle speed
   * Add widget for color cycling speed 
   * Add box blur effect
   * Add widget for blur radius

@@ -21,10 +21,16 @@ public:
     ImVec4 particleColor;
     int particleRadius;
     float particleSpin;
+    float particleSpeed;
     int blurRadius;
 public:
     SimulatorSettings();
-    SimulatorSettings(int nParticles, int particleRadius, float particleSpin, int blurRadius);
+    SimulatorSettings(
+            int nParticles,
+            int particleRadius,
+            float particleSpin,
+            float particleSpeed,
+            int blurRadius);
     void show();
     void showHelpMarker(const char* desc);
 };
