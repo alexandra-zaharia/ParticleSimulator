@@ -1,14 +1,9 @@
-cmake_minimum_required(VERSION 3.13)
-project(Particles)
+cmake_minimum_required(VERSION 3.10)
+project(ParticleSimulator)
 
 set(CMAKE_CXX_STANDARD 14)
-#set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${project_SOURCE_DIR}/cmake-build-debug")
 
-#find_package(SDL2 REQUIRED)
-#include_directories(${SDL2_INCLUDE_DIR})
-#target_link_libraries(target ${SDL2_LIBRARY})
-
-add_executable(Particles
+add_executable(ParticleSimulator
         main.cpp
         Screen.cpp
         Swarm.cpp
@@ -24,7 +19,6 @@ add_executable(Particles
 INCLUDE(FindPkgConfig)
 
 PKG_SEARCH_MODULE(SDL2 REQUIRED sdl2)
-#PKG_SEARCH_MODULE(SDL2IMAGE REQUIRED SDL2_image>=2.0.0)
 
 INCLUDE_DIRECTORIES(${SDL2_INCLUDE_DIRS} ${SDL2IMAGE_INCLUDE_DIRS} imgui imgui/GL)
 TARGET_LINK_LIBRARIES(${PROJECT_NAME} ${SDL2_LIBRARIES} ${SDL2IMAGE_LIBRARIES} dl GL)

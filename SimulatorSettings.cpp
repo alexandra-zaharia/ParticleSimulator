@@ -32,6 +32,7 @@ void SimulatorSettings::showHelpMarker(const char* desc)
 void SimulatorSettings::show() {
     ImGui::Begin("Settings");
     ImGui::SetWindowPos(ImVec2(SETTINGS_POS_X, SETTINGS_POS_Y), ImGuiCond_Always);
+    ImGui::SetWindowSize(ImVec2(SETTINGS_WIDTH, SETTINGS_HEIGHT), ImGuiCond_Always);
 
     ImGui::Text("Number of particles");
     ImGui::SameLine();
@@ -66,8 +67,6 @@ void SimulatorSettings::show() {
     ImGui::Text("Application average %.3f ms/frame (%.1f FPS)",
                 1000.0f / ImGui::GetIO().Framerate, ImGui::GetIO().Framerate);
 
-    std::cout << "Pos: " << ImGui::GetWindowPos().x << " " << ImGui::GetWindowPos().y << std::endl;
-    std::cout << "Size: " << ImGui::GetWindowSize().x << " " << ImGui::GetWindowSize().y << std::endl;
     ImGui::End();
 }
 
