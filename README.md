@@ -3,7 +3,7 @@ SDL + OpenGL particle simulator in C++ featuring ImGui widgets
 
 ![Particle simulator screenshot](particle_simulator_screenshot.png)
 
-This project is an adaptation of the particle simulator code from the free Udemy course [C++ Tutorial for Complete Beginners](https://www.udemy.com/free-learn-c-tutorial-beginners) by John Purcell. The current implementation adds the possibility to interactively modify various simulation parameters (such as number of particles or particle color and radius) through [Dear ImGui](https://github.com/ocornut/imgui) widgets.
+This project is an adaptation of the particle simulator code from the free Udemy course [C++ Tutorial for Complete Beginners](https://www.udemy.com/free-learn-c-tutorial-beginners) by John Purcell. The current implementation adds the possibility to interactively modify various simulation parameters (such as number of particles, particle color, color cycling speed, particle radius, spin, and speed) through [Dear ImGui](https://github.com/ocornut/imgui) widgets.
 
 ## Dependencies
 
@@ -47,6 +47,5 @@ Run the particle simulator from the `build` directory:
 The motivation to build this project is purely personal: although the particle simulator does not "do" anything useful *per se*, it allowed me to dive (again) into C++, to reflect object oriented design, to use graphical frameworks, and to test out a C++ library for GUI creation.
 
 ## TODO
-  * Add widget for color cycling speed 
   * Add box blur effect
   * Add widget for blur radius

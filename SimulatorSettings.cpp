@@ -17,6 +17,7 @@ int nParticles, int particleRadius, float particleSpin, float particleSpeed, int
         particleSpeed(particleSpeed),
         blurRadius(blurRadius) {
     cycleColors = true;
+    colorCyclingSpeed = 0.001;
     particleColor = ImVec4(0.0f, 0.0f, 0.0f, 1.0f);
 }
 
@@ -54,9 +55,15 @@ void SimulatorSettings::show() {
     showHelpMarker("If set to true, particle colors are cycled automatically.\n"
                    "Otherwise, the particle color may be defined manually\n"
                    "through the color picker below.\n");
-    ImGui::RadioButton("True", &cycle, 1);
-    ImGui::RadioButton("False", &cycle, 0);
+
+    ImGui::RadioButton("True ", &cycle, 1); ImGui::SameLine();
+    static int cyclingSpeed = 5;
+    ImGui::SliderInt("Cycle speed", &cyclingSpeed, 1, 20);
     ImGui::SameLine();
+    showHelpMarker("Adjust the color cycling speed.\n");
+    colorCyclingSpeed = cyclingSpeed * 0.0001f;
+
+    ImGui::RadioButton("False", &cycle, 0); ImGui::SameLine();
     cycleColors = cycle != 0;
     static ImVec4 color = ImVec4(0.8f, 0.8f, 0.8f, 1.00f);
     ImGui::ColorEdit3("", (float*) &color);

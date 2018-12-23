@@ -95,12 +95,12 @@ void Screen::showAbout() {
             SimulatorSettings::SETTINGS_POS_X,
             SimulatorSettings::SETTINGS_POS_Y + SimulatorSettings::SETTINGS_HEIGHT + 10),
             ImGuiCond_Always);
-    ImGui::SetWindowSize(ImVec2(SimulatorSettings::SETTINGS_WIDTH, 150), ImGuiCond_Always);
+    ImGui::SetWindowSize(ImVec2(SimulatorSettings::SETTINGS_WIDTH, 155), ImGuiCond_Always);
     ImGui::TextWrapped("This project is an adaptation of the particle simulator code from the free "
                 "Udemy course \"C++ Tutorial for Complete Beginners\" by John Purcell.\n\n"
                 "This implementation adds the possibility to interactively modify various "
-                "simulation parameters (such as number of particles or particle color and radius) "
-                "through Dear ImGui widgets.\n\n"
+                "simulation parameters (such as number of particles, particle color, color "
+                "cycling speed, particle radius, spin, and speed) through Dear ImGui widgets.\n\n"
                 "Dear ImGui is available at: https://github.com/ocornut/imgui\n");
     ImGui::End();
 }

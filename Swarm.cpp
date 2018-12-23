@@ -30,11 +30,10 @@ void Swarm::update(int elapsed, SimulatorSettings settings) {
         particle->update(interval, settings.particleSpin, settings.particleSpeed);
     }
 
-
     if (settings.cycleColors) {
-        color.x = (float) ((1 + sin(elapsed * 0.002)) * 0.5);
-        color.y = (float) ((1 + sin(elapsed * 0.001)) * 0.5);
-        color.z = (float) ((1 + sin(elapsed * 0.003)) * 0.5);
+        color.x = (float) ((1 + sin(elapsed * settings.colorCyclingSpeed * 2)) * 0.5);
+        color.y = (float) ((1 + sin(elapsed * settings.colorCyclingSpeed)) * 0.5);
+        color.z = (float) ((1 + sin(elapsed * settings.colorCyclingSpeed * 3)) * 0.5);
     } else {
         color.x = settings.particleColor.x;
         color.y = settings.particleColor.y;

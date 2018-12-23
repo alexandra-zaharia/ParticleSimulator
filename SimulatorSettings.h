@@ -18,6 +18,7 @@ public:
 
     int nParticles;
     bool cycleColors;
+    float colorCyclingSpeed;
     ImVec4 particleColor;
     int particleRadius;
     float particleSpin;
