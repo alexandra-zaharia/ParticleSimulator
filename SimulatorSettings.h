@@ -1,0 +1,33 @@
+//
+// Created by Alexandra Zaharia on 23/12/18.
+//
+
+#ifndef PARTICLES_SIMULATORSETTINGS_H
+#define PARTICLES_SIMULATORSETTINGS_H
+
+#include "imgui/imgui.h"
+
+namespace particlesim {
+
+struct SimulatorSettings {
+public:
+    const static int SETTINGS_WIDTH = 540;
+    const static int SETTINGS_HEIGHT = 240;
+    const static int SETTINGS_POS_X = 820;
+    const static int SETTINGS_POS_Y = 10;
+
+    int nParticles;
+    bool cycleColors;
+    ImVec4 particleColor;
+    int particleRadius;
+    int blurRadius;
+public:
+    SimulatorSettings();
+    SimulatorSettings(int nParticles, int particleRadius, int blurRadius);
+    void show();
+    void showHelpMarker(const char* desc);
+};
+
+}
+
+#endif //PARTICLES_SIMULATORSETTINGS_H
