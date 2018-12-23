@@ -37,9 +37,9 @@ public:
     void showSimulator();
     void showAbout();
 
-    void update();
-    bool shouldWindowClose();
     void boxBlur();
+
+    bool shouldWindowClose();
     void close();
 };
 

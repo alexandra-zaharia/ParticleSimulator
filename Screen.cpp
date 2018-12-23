@@ -105,24 +105,6 @@ void Screen::showAbout() {
     ImGui::End();
 }
 
-void Screen::update() {
-}
-
-bool Screen::shouldWindowClose() {
-    SDL_Event event;
-
-    while (SDL_PollEvent(&event)) {
-        ImGui_ImplSDL2_ProcessEvent(&event);
-        if (event.type == SDL_QUIT)
-            return true;
-        if (event.type == SDL_WINDOWEVENT && event.window.event == SDL_WINDOWEVENT_CLOSE &&
-                event.window.windowID == SDL_GetWindowID(m_window))
-            return true;
-    }
-
-    return false;
-}
-
 void Screen::boxBlur() {
     // Swap the buffers so that pixel info is in m_buffer2 and we are drawing in m_buffer1
 //    Uint32* temp = m_buffer1;
@@ -160,6 +142,21 @@ void Screen::boxBlur() {
 //
 //            setPixel(x, y, red, green, blue);
 //        }
+}
+
+bool Screen::shouldWindowClose() {
+    SDL_Event event;
+
+    while (SDL_PollEvent(&event)) {
+        ImGui_ImplSDL2_ProcessEvent(&event);
+        if (event.type == SDL_QUIT)
+            return true;
+        if (event.type == SDL_WINDOWEVENT && event.window.event == SDL_WINDOWEVENT_CLOSE &&
+                event.window.windowID == SDL_GetWindowID(m_window))
+            return true;
+    }
+
+    return false;
 }
 
 void Screen::close() {

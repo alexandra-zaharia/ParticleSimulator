@@ -14,7 +14,7 @@ add_executable(ParticleSimulator
         imgui/imgui_impl_opengl3.cpp
         imgui/imgui_impl_sdl.cpp
         imgui/GL/gl3w.c
-        SimulatorSettings.cpp SimulatorSettings.h)
+        SimulatorSettings.cpp)
 
 INCLUDE(FindPkgConfig)
 

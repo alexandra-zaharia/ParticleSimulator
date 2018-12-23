@@ -22,15 +22,14 @@ void Swarm::updateSettings(SimulatorSettings settings) {
 }
 
 void Swarm::update(int elapsed, SimulatorSettings settings) {
-    int interval = elapsed - lastTime;
+    updateSettings(settings);
 
+    int interval = elapsed - lastTime;
+    lastTime = elapsed;
     for (Particle* particle : m_pParticles) {
-        particle->update(interval);
+        particle->update(interval, settings.particleSpin);
     }
 
-    lastTime = elapsed;
-
-    updateSettings(settings);
 
     if (settings.cycleColors) {
         color.x = (float) ((1 + sin(elapsed * 0.002)) * 0.5);
