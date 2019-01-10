@@ -44,7 +44,7 @@ Run the particle simulator from the `build` directory:
 
 ## Motivation
 
-The motivation to build this project is purely personal: although the particle simulator does not "do" anything useful *per se*, it allowed me to dive (again) into C++, to reflect object oriented design, to use graphical frameworks, and to test out a C++ library for GUI creation.
+The motivation to build this project is purely personal: although the particle simulator does not "do" anything useful *per se*, it allowed me to dive (yet again) into C++, to reflect upon object oriented design, to use graphical frameworks, and to try out a C++ library for GUI creation.
 
 ## TODO
   * Add box blur effect
